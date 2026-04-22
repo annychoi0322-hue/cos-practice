@@ -7,6 +7,6 @@ int main()
 	a = -2;
 	b = 3;
 	c = 0xffab;
-	cout << "a + b + c =" << a + b + c << end1;
+	cout << "a + b + c =" << a + b + c << endl;
 	return 0;
 }
