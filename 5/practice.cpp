@@ -15,7 +15,7 @@ int main(int argc, char *argv[]){
 
     // Please refer to the result of “pointer-5”
 
-    cout << "str1 = " << str1 << endl; 
+    cout << str1 << str2 << endl; 
 
     return 0;
 }
