@@ -13,15 +13,15 @@
 class TemperatureData : public SensorData
 {
   private:
-    TemperatureData *next;
+    TemperatureData *next;           // Linked List에서 다음 TemperatureData를 가리키는 포인터
 
   public:
-    TemperatureData(time_t timestamp, double min, double max, double avg);
+    TemperatureData(time_t timestamp, double min, double max, double avg);   // TemperatureData 생성자
 
-    void setNext(TemperatureData *data);
-    TemperatureData *getNext();
+    void setNext(TemperatureData *data);  // 다음 노드 설정 (Linked List 연결)
+    TemperatureData *getNext();           // 다음 노드 반환
 
-    string getUnit();
+    string getUnit();                     // 온도 단위 반환
 };
 
 #endif /* __TEMPERATURE_H__ */
