@@ -4,6 +4,10 @@
 #include <string>
 using namespace std;
 
+// 이름 생성용 first name 데이터베이스
+// Info 클래스에서 랜덤 이름 생성 시 사용되는 이름 리스트이다
+// 다양한 영어권 이름을 포함한 상수 배열
+
 const string first[] = {
   "Aiden", "Andew", "Adrian", "Asher", "Austin", "Ayaan", "Aaron", "Alex", "Andres", "Antonio", "Archer",
   "Benjamin", "Brandon", "Bentley", "Blake", "Brody", "Bennett", "Bradley", "Brooks", "Bruno",
@@ -33,6 +37,8 @@ const string first[] = {
   "Zachary", "Zayden", "Zane", "Zion"
 };
 
+// 이름 생성용 Last name 데이터베이스
+// Info 클래서에서 랜덤 이름 생성 시 사용되는 성 리스트
 const string last[] = {
   "Gordon", "Goodman", "Grant", "Greenwood", "Neville", "Nelson", "Knox", "Dike", "Dyke", "Thatcher", "Davis", 
   "Wright", "Riley", "Reilly", "Ryleigh", "Rylie", "Robert", "Robin", "Robinson", "Ross", "Lowell", "Roy",
