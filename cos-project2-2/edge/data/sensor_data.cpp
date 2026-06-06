@@ -6,11 +6,11 @@
  */
 SensorData::SensorData(time_t timestamp, double avg)
 {
-  this->timestamp = timestamp;
-  this->avg = avg;
-  this->min = 0;
-  this->max = 0;
-  this->unit = "";
+  this->timestamp = timestamp; // 데이터가 측정된 시간
+  this->avg = avg;             // 평균값
+  this->min = 0;               // 사용하지 않으므로 0으로 초기화
+  this->max = 0;               // 사용하지 않으므로 0으로 초기화
+  this->unit = "";             // 단위는 기본 빈 문자열
 }
 
 /**
@@ -18,23 +18,24 @@ SensorData::SensorData(time_t timestamp, double avg)
  */
 SensorData::SensorData(time_t timestamp, double min, double max, double avg)
 {
-  this->timestamp = timestamp;
-  this->avg = avg;
-  this->min = min;
-  this->max = max;
-  this->unit = "";
+  this->timestamp = timestamp;  // 데이터 측정 시간
+  this->avg = avg;              // 평균값
+  this->min = min;              // 최솟값
+  this->max = max;              // 최댓값
+  this->unit = "";              // 단위는 기본값
 }
 
-void SensorData::setValue(double value) { this->avg = value; }
-double SensorData::getValue()           { return this->avg; }
 
-void SensorData::setMin(double min)     { this->min = min; }
-double SensorData::getMin()             { return this->min; }
+void SensorData::setValue(double value) { this->avg = value; }         // 평균값 설정
+double SensorData::getValue()           { return this->avg; }          // 평균값 반환
 
-void SensorData::setMax(double max)     { this->max = max; }
-double SensorData::getMax()             { return this->max; }
+void SensorData::setMin(double min)     { this->min = min; }           // 최솟값 설정
+double SensorData::getMin()             { return this->min; }          // 최솟값 반환
 
-void SensorData::setTimestamp(time_t t) { this->timestamp = t; }
-time_t SensorData::getTimestamp()       { return this->timestamp; }
+void SensorData::setMax(double max)     { this->max = max; }           // 최댓값 설정
+double SensorData::getMax()             { return this->max; }          // 최댓값 반환
 
-string SensorData::getUnit()            { return this->unit; }
+void SensorData::setTimestamp(time_t t) { this->timestamp = t; }       // timestamp 설정
+time_t SensorData::getTimestamp()       { return this->timestamp; }    // timestamp 반환
+
+string SensorData::getUnit()            { return this->unit; }         // 데이터 단위 반환
