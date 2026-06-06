@@ -1,40 +1,16 @@
 #include "power_data.h"
 
+/**
+ * Calls SensorData base constructor with avg only.
+ * Sets unit to "kWh" for power readings.
+ */
 PowerData::PowerData(time_t timestamp, double avg)
+  : SensorData(timestamp, avg)
 {
-  this->timestamp = timestamp;
-  this->avg = avg;
   this->next = NULL;
   this->unit = "kWh";
 }
 
-void PowerData::setNext(PowerData *next)
-{
-  this->next = next;
-}
-
-PowerData *PowerData::getNext()
-{
-  return this->next;
-}
-
-void PowerData::setValue(double value)
-{
-  this->avg = value;
-}
-
-double PowerData::getValue()
-{
-  return this->avg;
-}
-
-void PowerData::setTimestamp(time_t timestamp)
-{
-  this->timestamp = timestamp;
-}
-
-time_t PowerData::getTimestamp()
-{
-  return this->timestamp;
-}
-
+void PowerData::setNext(PowerData *data) { this->next = data; }
+PowerData *PowerData::getNext()          { return this->next; }
+string PowerData::getUnit()              { return this->unit; }
