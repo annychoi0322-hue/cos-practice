@@ -1,29 +1,21 @@
 #ifndef __POWER_DATA_H__
 #define __POWER_DATA_H__
 
-#include <random>
 #include <ctime>
 #include <string>
-#include "info.h"
+#include "sensor_data.h"  // Base Class 상속
 
-class PowerData
+/* PowerData는 SensorData를 상속받아 전력 특화 기능만 추가 */
+class PowerData : public SensorData
 {
   private:
-    time_t timestamp;
-    double avg;
-    string unit;
     PowerData *next;
+
   public:
     PowerData(time_t timestamp, double avg);
 
     void setNext(PowerData *data);
     PowerData *getNext();
-
-    void setValue(double value);
-    double getValue();
-
-    void setTimestamp(time_t timestamp);
-    time_t getTimestamp();
 
     string getUnit();
 };

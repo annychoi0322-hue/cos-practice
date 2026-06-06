@@ -1,40 +1,13 @@
 #include "power_data.h"
 
 PowerData::PowerData(time_t timestamp, double avg)
+  : SensorData(timestamp, avg)  // Base Class 생성자 호출
 {
-  this->timestamp = timestamp;
-  this->avg = avg;
   this->next = NULL;
   this->unit = "kWh";
 }
 
-void PowerData::setNext(PowerData *next)
-{
-  this->next = next;
-}
+void PowerData::setNext(PowerData *data) { this->next = data; }
+PowerData *PowerData::getNext()          { return this->next; }
 
-PowerData *PowerData::getNext()
-{
-  return this->next;
-}
-
-void PowerData::setValue(double value)
-{
-  this->avg = value;
-}
-
-double PowerData::getValue()
-{
-  return this->avg;
-}
-
-void PowerData::setTimestamp(time_t timestamp)
-{
-  this->timestamp = timestamp;
-}
-
-time_t PowerData::getTimestamp()
-{
-  return this->timestamp;
-}
-
+string PowerData::getUnit()              { return this->unit; }
