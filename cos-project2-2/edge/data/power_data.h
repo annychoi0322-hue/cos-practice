@@ -13,15 +13,15 @@
 class PowerData : public SensorData
 {
   private:
-    PowerData *next;
+    PowerData *next;  // Linked List에서 다음 PowerData를 가리키는 포인터
 
   public:
-    PowerData(time_t timestamp, double avg);
+    PowerData(time_t timestamp, double avg);   // PowerData 생성자
 
-    void setNext(PowerData *data);
-    PowerData *getNext();
+    void setNext(PowerData *data);             // 다음 노드 설정 (Linked List 연결)
+    PowerData *getNext();                      // 다음 노드 반환
 
-    string getUnit();
+    string getUnit();                          // 전력 데이터 단위 반환
 };
 
 #endif /* __POWER_DATA_H__ */
